@@ -1,0 +1,12 @@
+{
+    "name": "chen/bhattacharyyaCoefficient",
+    "authors": [
+        {
+            "name": "chenmobuys",
+            "email": "chenmobuys@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-imagick": "*"
+    }
+}
