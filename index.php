@@ -1,13 +1,13 @@
 <?php
 
 /**
- * 获取图片直方图
+ * 使用Imagick扩展获取图片直方图
  * @param $file
  * @return array
  * @throws ImagickException
  * @throws ImagickPixelException
  */
-function getHistogram($file)
+function getHistogramWithImagick($file)
 {
     $grayBit = 4;
     $histogram = [];
@@ -40,7 +40,7 @@ function getHistogram($file)
 }
 
 /**
- * 使用GD库获取图片直方图
+ * 使用GD扩展获取图片直方图
  * @param $file
  * @return array
  */
