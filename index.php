@@ -46,35 +46,8 @@ function getHistogramWithImagick($file)
  */
 function getHistogramWithGd($file)
 {
-    $ext = pathinfo($file, PATHINFO_EXTENSION);
-
-    switch ($ext) {
-        case 'jpg':
-        case 'jpeg':
-            $image = imagecreatefromjpeg($file);
-            break;
-        case 'png':
-            $image = imagecreatefrompng($file);
-            break;
-        case 'bmp':
-            $image = imagecreatefrombmp($file);
-            break;
-        case 'wbmp':
-            $image = imagecreatefromwbmp($file);
-            break;
-        case 'webp':
-            $image = imagecreatefromwebp($file);
-            break;
-        case 'xbm':
-            $image = imagecreatefromxbm($file);
-            break;
-        case 'xpm':
-            $image = imagecreatefromxpm($file);
-            break;
-        default:
-            $image = imagecreatefromstring($file);
-            break;
-    }
+    $content = file_get_contents($file);
+    $image = imagecreatefromstring($content);
 
     $width = imagesx($image);
     $height = imagesy($image);
